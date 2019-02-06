@@ -18,6 +18,14 @@
   color: white;
 }
 
+.slot_selected{
+  background-color: blue
+}
+
+.slot_deselected{
+  background-color: transparent
+}
+
 .App-link {
   color: #61dafb;
 }
