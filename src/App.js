@@ -71,7 +71,7 @@ class App extends Component {
       let slotid = this.state.selectedSlot;
       let date = this.getFormattedDate(this.state.appointment_date);
       
-      fetch(`http://localhost:8000/api/doctor/book/slot?id=${encodeURIComponent(slotid)}&appointment_date=${encodeURIComponent(date)}`,{
+      fetch(`http://admin.cureassist.co/api/doctor/book/slot?id=${encodeURIComponent(slotid)}&appointment_date=${encodeURIComponent(date)}`,{
           method:"POST"
       }).then(response => response.json())
         .then(
