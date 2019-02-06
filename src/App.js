@@ -16,7 +16,7 @@ const weekday=new Array(7);
   weekday[5]="Friday";
   weekday[6]="Saturday";
 const options = [
-  { value: '3', label: 'Chandan' },
+  { value: '1', label: 'Pawan' },
   { value: '8', label: 'Dr Ambanna Gowda' }
 ];
 
