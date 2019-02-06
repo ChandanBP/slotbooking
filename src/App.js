@@ -75,7 +75,7 @@ class App extends Component {
       
       let doctor_id = this.state.selectedDoctor.value;
 
-      fetch(server_url+`/doctor/book/slot?id=${encodeURIComponent(slotid)}&appointment_date=${encodeURIComponent(date)}&doctor_id=${encodeURIComponent(doctor_id)}`,{
+      fetch(`http://admin.cureassist.co/api/doctor/book/slot?id=${encodeURIComponent(slotid)}&appointment_date=${encodeURIComponent(date)}&doctor_id=${encodeURIComponent(doctor_id)}`,{
           method:"POST"
       }).then(response => response.json())
         .then(
@@ -93,7 +93,7 @@ class App extends Component {
               let bookingid = result.booking_id;
               let paymentid = "rzp_1234";
               
-              fetch(server_url+`/doctor/slot/status/update?appointment_id=${encodeURIComponent(bookingid)}&payment_id=${encodeURIComponent(paymentid)}&status=${encodeURIComponent(status)}`,{method:"POST"})
+              fetch(`http://admin.cureassist.co/api/doctor/slot/status/update?appointment_id=${encodeURIComponent(bookingid)}&payment_id=${encodeURIComponent(paymentid)}&status=${encodeURIComponent(status)}`,{method:"POST"})
               .then(response => response.json())
               .then(
                 (result) => {
@@ -126,7 +126,7 @@ class App extends Component {
       let doctor_id = (this.state.selectedDoctor==null)?null:this.state.selectedDoctor.value;
       let appointment_date = this.getFormattedDate(this.state.appointment_date);
       
-      fetch(server_url+`/doctor/slot?appointment_date=${appointment_date}&doctor_id=${encodeURIComponent(doctor_id)}`)
+      fetch(`http://admin.cureassist.co/api/doctor/slot?appointment_date=${appointment_date}&doctor_id=${encodeURIComponent(doctor_id)}`)
       .then(res => res.json())
       .then(
         (result) => {
